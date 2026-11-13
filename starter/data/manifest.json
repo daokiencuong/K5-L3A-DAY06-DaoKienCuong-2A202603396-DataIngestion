@@ -1,0 +1,260 @@
+{
+    "corpus_id":  "python-3.12-tutorial-howto",
+    "title":  "Python 3.12 Tutorial and HOWTO documentation",
+    "source":  "Python 3.12.16 Documentation",
+    "source_url":  "https://docs.python.org/3.12/",
+    "source_snapshot":  {
+                            "version":  "3.12.16",
+                            "download_page":  "https://docs.python.org/3.12/download.html",
+                            "source_page_last_updated":  "2026-10-26"
+                        },
+    "license_or_permission":  "Python Software Foundation License Version 2 for documentation; code examples additionally under Zero-Clause BSD License. See starter/data/python-3.12-docs-html/python-3.12-docs-html/license.html and copyright.html.",
+    "accessed_at": "2026-11-13",
+    "accessed_at_note": "Date supplied by user.",
+    "counting_method":  "One distinct official documentation HTML page is one source unit. normalized_characters counts visible text within the Sphinx main-content body after removing script/style/nav markup and HTML tags, decoding entities, and collapsing whitespace; every retained unit has at least 1,500 characters.",
+    "physical_page_count":  null,
+    "source_unit_count":  30,
+    "corpus_selection":  "All 17 tutorial pages and 13 selected HOWTO pages; section metadata supports filter questions.",
+    "units":  [
+                  {
+                      "unit_id":  "tutorial-appendix",
+                      "title":  "appendix",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/appendix.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/appendix.html",
+                      "normalized_characters":  4602
+                  },
+                  {
+                      "unit_id":  "tutorial-appetite",
+                      "title":  "appetite",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/appetite.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/appetite.html",
+                      "normalized_characters":  4670
+                  },
+                  {
+                      "unit_id":  "tutorial-classes",
+                      "title":  "classes",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/classes.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/classes.html",
+                      "normalized_characters":  34200
+                  },
+                  {
+                      "unit_id":  "tutorial-controlflow",
+                      "title":  "controlflow",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/controlflow.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/controlflow.html",
+                      "normalized_characters":  36633
+                  },
+                  {
+                      "unit_id":  "tutorial-datastructures",
+                      "title":  "datastructures",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/datastructures.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/datastructures.html",
+                      "normalized_characters":  22928
+                  },
+                  {
+                      "unit_id":  "tutorial-errors",
+                      "title":  "errors",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/errors.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/errors.html",
+                      "normalized_characters":  20624
+                  },
+                  {
+                      "unit_id":  "tutorial-floatingpoint",
+                      "title":  "floatingpoint",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/floatingpoint.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/floatingpoint.html",
+                      "normalized_characters":  12197
+                  },
+                  {
+                      "unit_id":  "tutorial-index",
+                      "title":  "index",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/index.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/index.html",
+                      "normalized_characters":  6142
+                  },
+                  {
+                      "unit_id":  "tutorial-inputoutput",
+                      "title":  "inputoutput",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/inputoutput.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/inputoutput.html",
+                      "normalized_characters":  19162
+                  },
+                  {
+                      "unit_id":  "tutorial-interactive",
+                      "title":  "interactive",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/interactive.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/interactive.html",
+                      "normalized_characters":  2431
+                  },
+                  {
+                      "unit_id":  "tutorial-interpreter",
+                      "title":  "interpreter",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/interpreter.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/interpreter.html",
+                      "normalized_characters":  6234
+                  },
+                  {
+                      "unit_id":  "tutorial-introduction",
+                      "title":  "introduction",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/introduction.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/introduction.html",
+                      "normalized_characters":  17500
+                  },
+                  {
+                      "unit_id":  "tutorial-modules",
+                      "title":  "modules",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/modules.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/modules.html",
+                      "normalized_characters":  23571
+                  },
+                  {
+                      "unit_id":  "tutorial-stdlib",
+                      "title":  "stdlib",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/stdlib.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/stdlib.html",
+                      "normalized_characters":  10738
+                  },
+                  {
+                      "unit_id":  "tutorial-stdlib2",
+                      "title":  "stdlib2",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/stdlib2.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/stdlib2.html",
+                      "normalized_characters":  14343
+                  },
+                  {
+                      "unit_id":  "tutorial-venv",
+                      "title":  "venv",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/venv.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/venv.html",
+                      "normalized_characters":  7148
+                  },
+                  {
+                      "unit_id":  "tutorial-whatnow",
+                      "title":  "whatnow",
+                      "section":  "tutorial",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/tutorial/whatnow.html",
+                      "source_url":  "https://docs.python.org/3.12/tutorial/whatnow.html",
+                      "normalized_characters":  3350
+                  },
+                  {
+                      "unit_id":  "howto-annotations",
+                      "title":  "annotations",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/annotations.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/annotations.html",
+                      "normalized_characters":  8983
+                  },
+                  {
+                      "unit_id":  "howto-argparse",
+                      "title":  "argparse",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/argparse.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/argparse.html",
+                      "normalized_characters":  25710
+                  },
+                  {
+                      "unit_id":  "howto-curses",
+                      "title":  "curses",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/curses.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/curses.html",
+                      "normalized_characters":  22021
+                  },
+                  {
+                      "unit_id":  "howto-descriptor",
+                      "title":  "descriptor",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/descriptor.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/descriptor.html",
+                      "normalized_characters":  39585
+                  },
+                  {
+                      "unit_id":  "howto-enum",
+                      "title":  "enum",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/enum.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/enum.html",
+                      "normalized_characters":  39391
+                  },
+                  {
+                      "unit_id":  "howto-functional",
+                      "title":  "functional",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/functional.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/functional.html",
+                      "normalized_characters":  45646
+                  },
+                  {
+                      "unit_id":  "howto-ipaddress",
+                      "title":  "ipaddress",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/ipaddress.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/ipaddress.html",
+                      "normalized_characters":  11564
+                  },
+                  {
+                      "unit_id":  "howto-logging",
+                      "title":  "logging",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/logging.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/logging.html",
+                      "normalized_characters":  42327
+                  },
+                  {
+                      "unit_id":  "howto-mro",
+                      "title":  "mro",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/mro.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/mro.html",
+                      "normalized_characters":  20432
+                  },
+                  {
+                      "unit_id":  "howto-regex",
+                      "title":  "regex",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/regex.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/regex.html",
+                      "normalized_characters":  53760
+                  },
+                  {
+                      "unit_id":  "howto-sockets",
+                      "title":  "sockets",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/sockets.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/sockets.html",
+                      "normalized_characters":  18041
+                  },
+                  {
+                      "unit_id":  "howto-sorting",
+                      "title":  "sorting",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/sorting.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/sorting.html",
+                      "normalized_characters":  11821
+                  },
+                  {
+                      "unit_id":  "howto-unicode",
+                      "title":  "unicode",
+                      "section":  "howto",
+                      "source_path":  "python-3.12-docs-html/python-3.12-docs-html/howto/unicode.html",
+                      "source_url":  "https://docs.python.org/3.12/howto/unicode.html",
+                      "normalized_characters":  29279
+                  }
+              ]
+}
