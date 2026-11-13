@@ -1,0 +1,225 @@
+{
+    "corpus_id":  "python-3.12-tutorial-howto",
+    "description":  "20 retrieval questions grounded in the selected Python 3.12 Tutorial and HOWTO pages. Splits are fixed before experiments: 15 dev and 5 test.",
+    "questions":  [
+                      {
+                          "id":  "q01",
+                          "type":  "truc_tiep",
+                          "split":  "dev",
+                          "question":  "Trong range(n), giá trị n có nằm trong dãy được tạo ra không?",
+                          "expected_answer":  "Không. Giá trị kết thúc n không thuộc dãy do range tạo ra.",
+                          "gold_source_id":  "tutorial-controlflow",
+                          "gold_page":  "tutorial-controlflow",
+                          "evidence_quote":  "The given end point is never part of the generated sequence"
+                      },
+                      {
+                          "id":  "q02",
+                          "type":  "dien_dat_lai",
+                          "split":  "dev",
+                          "question":  "Nếu dùng list như một stack, phần tử nào được lấy ra trước: phần tử thêm đầu tiên hay phần tử thêm gần nhất?",
+                          "expected_answer":  "Phần tử được thêm gần nhất được lấy ra trước; list stack hoạt động theo LIFO.",
+                          "gold_source_id":  "tutorial-datastructures",
+                          "gold_page":  "tutorial-datastructures",
+                          "evidence_quote":  "where the last element added is the first element retrieved (“last-in, first-out”)."
+                      },
+                      {
+                          "id":  "q03",
+                          "type":  "metadata_filter",
+                          "split":  "dev",
+                          "question":  "Chỉ xét phần Tutorial: vòng lặp có else thì else chạy trong trường hợp nào?",
+                          "filter":  {
+                                         "section":  "tutorial"
+                                     },
+                          "expected_answer":  "Else chạy khi vòng lặp kết thúc mà không thực hiện break.",
+                          "gold_source_id":  "tutorial-controlflow",
+                          "gold_page":  "tutorial-controlflow",
+                          "evidence_quote":  "without executing the break , the else clause executes."
+                      },
+                      {
+                          "id":  "q04",
+                          "type":  "dieu_kien",
+                          "split":  "dev",
+                          "question":  "Trong try/except, nếu khối try không phát sinh exception thì khối except có chạy không?",
+                          "expected_answer":  "Không. Khối except bị bỏ qua và câu lệnh try kết thúc bình thường.",
+                          "gold_source_id":  "tutorial-errors",
+                          "gold_page":  "tutorial-errors",
+                          "evidence_quote":  "If no exception occurs, the except clause is skipped and execution of the try statement is finished."
+                      },
+                      {
+                          "id":  "q05",
+                          "type":  "truc_tiep",
+                          "split":  "dev",
+                          "question":  "Khi chạy một module trực tiếp như script, Python đặt __name__ bằng giá trị nào?",
+                          "expected_answer":  "Python đặt __name__ thành \"__main__\".",
+                          "gold_source_id":  "tutorial-modules",
+                          "gold_page":  "tutorial-modules",
+                          "evidence_quote":  "with the __name__ set to \"__main__\""
+                      },
+                      {
+                          "id":  "q06",
+                          "type":  "dien_dat_lai",
+                          "split":  "dev",
+                          "question":  "Virtual environment giúp giải quyết vấn đề gì khi hai ứng dụng cần các phiên bản thư viện khác nhau?",
+                          "expected_answer":  "Mỗi ứng dụng có thể dùng môi trường riêng với phiên bản package riêng, tránh xung đột phụ thuộc.",
+                          "gold_source_id":  "tutorial-venv",
+                          "gold_page":  "tutorial-venv",
+                          "evidence_quote":  "a self-contained directory tree that contains a Python installation for a particular version of Python, plus a number of additional packages."
+                      },
+                      {
+                          "id":  "q07",
+                          "type":  "truc_tiep",
+                          "split":  "dev",
+                          "question":  "Một lớp dẫn xuất trong Python có thể ghi đè phương thức của lớp cơ sở không?",
+                          "expected_answer":  "Có. Lớp dẫn xuất có thể ghi đè các phương thức của lớp cơ sở.",
+                          "gold_source_id":  "tutorial-classes",
+                          "gold_page":  "tutorial-classes",
+                          "evidence_quote":  "a derived class can override any methods of its base class or classes"
+                      },
+                      {
+                          "id":  "q08",
+                          "type":  "truc_tiep",
+                          "split":  "dev",
+                          "question":  "Trong f-string, dấu ngoặc nhọn được dùng để viết loại nội dung nào?",
+                          "expected_answer":  "Biểu thức Python có thể tham chiếu biến hoặc giá trị literal.",
+                          "gold_source_id":  "tutorial-inputoutput",
+                          "gold_page":  "tutorial-inputoutput",
+                          "evidence_quote":  "Inside this string, you can write a Python expression between { and } characters that can refer to variables or literal values."
+                      },
+                      {
+                          "id":  "q09",
+                          "type":  "dieu_kien",
+                          "split":  "dev",
+                          "question":  "Nếu chương trình argparse khai báo positional argument tên echo mà người dùng bỏ qua nó, điều gì xảy ra?",
+                          "expected_answer":  "Chương trình báo lỗi rằng positional argument echo là bắt buộc.",
+                          "gold_source_id":  "howto-argparse",
+                          "gold_page":  "howto-argparse",
+                          "evidence_quote":  "the following arguments are required: echo"
+                      },
+                      {
+                          "id":  "q10",
+                          "type":  "metadata_filter",
+                          "split":  "dev",
+                          "question":  "Chỉ xét tài liệu HOWTO: re.findall() trả về kết quả dưới dạng gì?",
+                          "filter":  {
+                                         "section":  "howto"
+                                     },
+                          "expected_answer":  "Một list chứa các chuỗi con khớp với pattern.",
+                          "gold_source_id":  "howto-regex",
+                          "gold_page":  "howto-regex",
+                          "evidence_quote":  "findall() Find all substrings where the RE matches, and returns them as a list."
+                      },
+                      {
+                          "id":  "q11",
+                          "type":  "truc_tiep",
+                          "split":  "dev",
+                          "question":  "Nếu chưa cấu hình logging, mức mặc định WARNING có nghĩa là các sự kiện ở mức nào trở lên được theo dõi?",
+                          "expected_answer":  "Các sự kiện ở mức WARNING và cao hơn được theo dõi.",
+                          "gold_source_id":  "howto-logging",
+                          "gold_page":  "howto-logging",
+                          "evidence_quote":  "The default level is WARNING , which means that only events of this level and above will be tracked"
+                      },
+                      {
+                          "id":  "q12",
+                          "type":  "dien_dat_lai",
+                          "split":  "dev",
+                          "question":  "Khi nhiều record có cùng sort key, sorting ổn định bảo toàn điều gì?",
+                          "expected_answer":  "Thứ tự ban đầu của các record có cùng key được giữ nguyên.",
+                          "gold_source_id":  "howto-sorting",
+                          "gold_page":  "howto-sorting",
+                          "evidence_quote":  "Sorts are guaranteed to be stable . That means that when multiple records have the same key, their original order is preserved."
+                      },
+                      {
+                          "id":  "q13",
+                          "type":  "dieu_kien",
+                          "split":  "dev",
+                          "question":  "Nếu muốn enum không cho phép nhiều tên cùng trỏ tới một giá trị, nên dùng decorator nào?",
+                          "expected_answer":  "Dùng decorator unique() từ enum.",
+                          "gold_source_id":  "howto-enum",
+                          "gold_page":  "howto-enum",
+                          "evidence_quote":  "By default, enumerations allow multiple names as aliases for the same value. When this behavior isn’t desired, you can use the unique() decorator:"
+                      },
+                      {
+                          "id":  "q14",
+                          "type":  "truc_tiep",
+                          "split":  "dev",
+                          "question":  "UTF-8 biểu diễn mỗi ký tự bằng số byte cố định hay bằng một chuỗi có thể dài một hoặc nhiều byte?",
+                          "expected_answer":  "Mỗi ký tự được biểu diễn bằng một chuỗi gồm một hoặc nhiều byte.",
+                          "gold_source_id":  "howto-unicode",
+                          "gold_page":  "howto-unicode",
+                          "evidence_quote":  "UTF-8 is a byte oriented encoding. The encoding specifies that each character is represented by a specific sequence of one or more bytes."
+                      },
+                      {
+                          "id":  "q15",
+                          "type":  "dieu_kien",
+                          "split":  "dev",
+                          "question":  "Theo HOWTO ipaddress, 192.0.2.1/24 có mô tả một network hợp lệ không?",
+                          "expected_answer":  "Không. Network object không thể có host bits được đặt; 192.0.2.1/24 không mô tả một network.",
+                          "gold_source_id":  "howto-ipaddress",
+                          "gold_page":  "howto-ipaddress",
+                          "evidence_quote":  "Network objects cannot have any host bits set. The practical effect of this is that 192.0.2.1/24 does not describe a network."
+                      },
+                      {
+                          "id":  "q16",
+                          "type":  "dieu_kien",
+                          "split":  "test",
+                          "question":  "Nếu server socket bind vào 127.0.0.1, máy khác có thể truy cập nó qua mạng không?",
+                          "expected_answer":  "Không. Socket bind vào localhost/127.0.0.1 chỉ hiển thị trong cùng máy.",
+                          "gold_source_id":  "howto-sockets",
+                          "gold_page":  "howto-sockets",
+                          "evidence_quote":  "If we had used s.bind((\u0027localhost\u0027, 80)) or s.bind((\u0027127.0.0.1\u0027, 80)) we would still have a “server” socket, but one that was only visible within the same machine."
+                      },
+                      {
+                          "id":  "q17",
+                          "type":  "dieu_kien",
+                          "split":  "test",
+                          "question":  "Khối finally có chạy khi try phát sinh exception không, hay chỉ chạy khi try thành công?",
+                          "expected_answer":  "Finally chạy dù khối try có phát sinh exception hay không.",
+                          "gold_source_id":  "tutorial-errors",
+                          "gold_page":  "tutorial-errors",
+                          "evidence_quote":  "The finally clause runs whether or not the try statement produces an exception."
+                      },
+                      {
+                          "id":  "q18",
+                          "type":  "metadata_filter",
+                          "split":  "test",
+                          "question":  "Trong HOWTO về regex, khác biệt chính giữa re.match() và re.search() là gì?",
+                          "filter":  {
+                                         "section":  "howto"
+                                     },
+                          "expected_answer":  "match() kiểm tra từ đầu chuỗi; search() quét để tìm vị trí bất kỳ có pattern khớp.",
+                          "gold_source_id":  "howto-regex",
+                          "gold_page":  "howto-regex",
+                          "evidence_quote":  "match() Determine if the RE matches at the beginning of the string. search() Scan through a string, looking for any location where this RE matches."
+                      },
+                      {
+                          "id":  "q19",
+                          "type":  "metadata_filter",
+                          "split":  "test",
+                          "question":  "Chỉ xét phần Tutorial: khi nào khối else của try/except được chạy?",
+                          "filter":  {
+                                         "section":  "tutorial"
+                                     },
+                          "expected_answer":  "Else chạy khi khối try không phát sinh exception.",
+                          "gold_source_id":  "tutorial-errors",
+                          "gold_page":  "tutorial-errors",
+                          "evidence_quote":  "It is useful for code that must be executed if the try clause does not raise an exception.",
+                          "acceptable_gold":  [
+                              {
+                                  "source_id":  "tutorial-controlflow",
+                                  "page":  "tutorial-controlflow",
+                                  "evidence_quote":  "a try statement’s else clause runs when no exception occurs"
+                              }
+                          ]
+                      },
+                      {
+                          "id":  "q20",
+                          "type":  "dien_dat_lai",
+                          "split":  "test",
+                          "question":  "Có thể truyền một IPv6 network string vào ipaddress.ip_network() mà không chọn riêng hàm cho IPv6 không?",
+                          "expected_answer":  "Có. Hàm factory ip_network() tự xác định phiên bản IP phù hợp.",
+                          "gold_source_id":  "howto-ipaddress",
+                          "gold_page":  "howto-ipaddress",
+                          "evidence_quote":  "a factory function is provided that determines the correct IP version automatically:"
+                      }
+                  ]
+}

@@ -1,8 +1,8 @@
 # Thông tin học viên
 
-- Họ và tên:
-- MSSV:
-- Lớp: L3A / L3B / khác:
-- Chủ đề và corpus:
-- Repo bài nộp:
+- Họ và tên: Đào Kiên Cường
+- MSSV: 2A202603396
+- Lớp: L3A
+- Chủ đề và corpus: Python 3.12 Tutorial and HOWTO documentation
+- Repo bài nộp: [daokiencuong/K5-L3A-DAY06-DaoKienCuong-2A202603396-DataIngestion](https://github.com/daokiencuong/K5-L3A-DAY06-DaoKienCuong-2A202603396-DataIngestion)
 - Commit chốt bài:

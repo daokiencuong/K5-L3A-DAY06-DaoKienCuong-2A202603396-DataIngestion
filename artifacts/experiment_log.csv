@@ -1,4 +1,4 @@
 strategy,chunking,chunk_size,overlap,metadata,filter,vectorizer,hypothesis,dev_hit1,dev_hit3,test_hit1,test_hit3,notes
-A,,,,,,,,,,,,
-B,,,,,,,,,,,,
-C,,,,,,,,,,,,
+A,fixed_size,500,50,"document_id; source; unit_id; section; title",none,"OpenAI text-embedding-3-small (1536d)","Baseline fixed windows; compare with paragraph boundaries",2/15,7/15,1/5,3/5,"1334 chunks; embedding 39.626s; database ingest 4.779s; total API cost $0.01 USD (reported by user); original run did not save chunk-length stats, token usage or search timing"
+B,paragraph,900,0,"document_id; source; unit_id; section; title",none,"OpenAI text-embedding-3-small (1536d)","Whole-paragraph grouping should preserve context and reduce chunk count",4/15,6/15,2/5,4/5,"781 chunks; same corpus/model/benchmark as A; shared total API cost $0.01 USD (reported by user); original run did not verify re-ingestion"
+C,paragraph,900,0,"document_id; source; unit_id; section; title","section from question filter","OpenAI text-embedding-3-small (1536d)","Same chunks as B; filter should constrain search scope",4/15,6/15,2/5,4/5,"781 chunks reused from B; top-3 unchanged for all 4 filtered questions; 12/12 filtered hits compliant; shared total API cost $0.01 USD (reported by user)"

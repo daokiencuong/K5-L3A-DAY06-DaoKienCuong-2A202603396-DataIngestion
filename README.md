@@ -10,7 +10,7 @@ Biến tài liệu thành kho tri thức có thể truy xuất cho AI agent, r�
 
 ## Bắt đầu nhanh
 
-Dùng [starter PostgreSQL + pgvector](starter/README.md) để dựng database và hoàn thiện các hàm TODO, hoặc tự chọn vector store tương đương. Starter chỉ là khung: **bạn tự hiện thực pipeline và benchmark**.
+Dùng [starter PostgreSQL + pgvector](starter/README.md) để dựng database. Trong repo bài làm này, pipeline A/B/C đã được hiện thực trong `starter/src/`; xem [hướng dẫn starter](starter/README.md) để cài môi trường, cấu hình embedding API và chạy benchmark. Có thể thay bằng Qdrant, Chroma hoặc vector store tương đương nếu ghi rõ cấu hình.
 
 ## 1. Xây pipeline
 

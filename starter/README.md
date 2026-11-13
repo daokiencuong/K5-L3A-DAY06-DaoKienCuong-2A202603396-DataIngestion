@@ -1,6 +1,6 @@
 # Starter · PostgreSQL + pgvector
 
-Bộ khởi động **tùy chọn** cho lab cá nhân. Docker Compose tạo PostgreSQL + pgvector local; các file trong `src/` là **khung pseudocode có TODO**, chưa đọc tài liệu, tạo embedding, lưu vector hay chạy benchmark. Bạn cần tự hiện thực. Vẫn có thể chọn Qdrant, Chroma hoặc vector store tương đương theo [GUIDE.md](../GUIDE.md).
+Starter PostgreSQL + pgvector cho lab cá nhân. Pipeline trong `src/` đã được hiện thực để đọc manifest HTML, chunk, gọi embedding API OpenAI-compatible, lưu/retrieve bằng pgvector và chạy benchmark. Có thể thay bằng Qdrant, Chroma hoặc vector store tương đương theo [GUIDE.md](../GUIDE.md).
 
 ## Cấu trúc
 
@@ -13,14 +13,14 @@ starter/
 ├── scripts/check_setup.py # kiểm tra kết nối và extension (đã chạy được)
 ├── src/
 │   ├── models.py          # cấu trúc dữ liệu mẫu
-│   ├── ingestion.py       # TODO: đọc / chuẩn hóa tài liệu
-│   ├── chunking.py        # TODO: chia chunk
-│   ├── embeddings.py      # TODO: chọn model API hoặc local
-│   ├── store.py           # TODO: lưu vector, metadata và filter
-│   ├── evaluation.py      # TODO: chấm truy xuất, lưu trace
-│   └── run.py             # TODO: kết nối các bước thành pipeline
-├── data/                  # bạn tự chuẩn bị corpus được phép sử dụng
-└── results/               # lưu kết quả của bạn
+│   ├── ingestion.py       # đọc HTML manifest, chuẩn hóa và giữ locator
+│   ├── chunking.py        # fixed-size và paragraph-aware chunking
+│   ├── embeddings.py      # OpenAI-compatible embedding API
+│   ├── store.py           # PostgreSQL/pgvector, cosine search và metadata filter
+│   ├── evaluation.py      # Hit@1, Evidence Hit@3 và trace
+│   └── run.py             # chạy A/B/C, lưu trace và thống kê runtime
+├── data/                  # corpus được phép sử dụng và manifest
+└── results/               # trace top-3, số liệu và audit
 ```
 
 ## 1. Cài và kiểm tra database
@@ -54,12 +54,14 @@ docker compose -p day6_student_starter stop
 
 Điền key tương ứng trong `.env` nếu dùng OpenRouter, OpenAI hoặc Gemini; **không commit `.env`**. Model local không cần API key. `requirements.txt` chỉ có dependencies cơ bản: tự cài SDK hoặc thư viện local phù hợp với model bạn chọn và ghi lại version/lệnh cài trong báo cáo. Ghi tên model và số chiều; dùng cùng model cho toàn bộ chiến lược và vector query tương thích vector document.
 
-## 3. Hoàn thiện pipeline
+## 3. Chạy pipeline
 
 1. Đặt corpus vào `data/` hoặc cung cấp manifest/hướng dẫn truy cập. Đọc [GUIDE.md](../GUIDE.md) về **30 trang nội dung**, quyền dữ liệu và metadata.
-2. Hoàn thiện từng hàm TODO trong `src/`. Lưu ID tài liệu, nguồn, trang/vị trí và ít nhất một trường filter có ích.
-3. Xây ít nhất ba cấu hình; ví dụ A fixed-size, B theo đoạn, C như B nhưng có filter. Cần cùng corpus, model và benchmark; nạp lại không nhân đôi và xử lý chunk cũ khi dữ liệu đổi.
-4. Tự viết ít nhất 20 câu hỏi kèm evidence, tách dev/test trước khi thử theo [BENCHMARK.md](../BENCHMARK.md). Lưu trace top-3 và báo cáo đủ năm tiêu chí.
-5. Sau khi hoàn thiện, chạy `python -m src.run` từ thư mục `starter/`. Trước khi làm TODO, lệnh này **chủ động báo `NotImplementedError`**.
+2. Đặt corpus và manifest hợp lệ trong `data/`; pipeline kiểm tra ID, đường dẫn và độ dài nội dung.
+3. Điền `EMBEDDING_MODEL` và một API key trong `.env` (ví dụ `text-embedding-3-small` cùng `OPENAI_API_KEY`). Không commit `.env`.
+4. Tạo benchmark tối thiểu 20 câu, chia dev/test và kiểm chứng evidence theo [BENCHMARK.md](../BENCHMARK.md).
+5. Chạy `python -m src.run` từ thư mục `starter/`. Pipeline chạy A/B/C trên cùng corpus, model và benchmark, rồi ghi trace top-3 vào `results/retrieval_results.json`.
+
+Kết quả gồm số chunk và phân bố độ dài theo ký tự, tổng ký tự nguồn, phiên bản runtime, token usage nếu API trả về, thời gian embedding/ingest/search và các chỉ số dev/test. Không cài tokenizer riêng; token usage chỉ được ghi khi provider trả về. Pipeline nạp lại cùng dữ liệu thêm một lần bằng vector đã tạo sẵn, rồi so số dòng lưu trong DB để xác nhận không nhân đôi. `PgVectorStore.upsert` thay snapshot theo strategy trong transaction; primary key `(strategy, chunk_id)` ngăn ID trùng. Cấu hình hiện dùng exact cosine search (không tạo ANN index).
 
 Lưu code, cấu hình, kết quả và lệnh chạy để người chấm tái lập; không commit key, dữ liệu mật hoặc dữ liệu không có quyền chia sẻ.
